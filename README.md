@@ -1,2 +1,2 @@
-# web-technologies
-Everything for the Web Technologies university course
+# Web Technologies
+A collection of exercises and lab assigments for Web Technologies university course.
