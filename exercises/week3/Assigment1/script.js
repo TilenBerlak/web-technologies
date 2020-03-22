@@ -5,8 +5,9 @@ function domRemoveParticipant(event) {
     const table = document.querySelector("#participant-table");
 
     for(let i = 0; i < table.rows.length; i++) {
-        if(i != 0)             
+        if(i != 0 && confirm("Are you sure you want to delete " + table.rows[i].cells[0].innerHTML + "?")) {            
             table.deleteRow(i);
+        }
     }
 }
 
@@ -21,6 +22,7 @@ function domAddParticipant(participant) {
         const td = document.createElement("td");
         td.innerText = participant[key];
         tr.appendChild(td);
+        window.localStorage.setItem(key, participant[key]);
     }
 }
 
@@ -52,5 +54,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // This function is run after the page contents have been loaded
     // Put your initialization code here
     document.getElementById("addButton").onclick = addParticipant;
-    document.getElementById("participant-table").onclick = domRemoveParticipant;
+    document.getElementById("participant-table").ondblclick = domRemoveParticipant;
 })
