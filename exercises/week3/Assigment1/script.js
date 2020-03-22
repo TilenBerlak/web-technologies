@@ -2,6 +2,12 @@
 
 function domRemoveParticipant(event) {
     // TODO
+    const table = document.querySelector("#participant-table");
+
+    for(let i = 0; i < table.rows.length; i++) {
+        if(i != 0)             
+            table.deleteRow(i);
+    }
 }
 
 function domAddParticipant(participant) {
@@ -46,4 +52,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // This function is run after the page contents have been loaded
     // Put your initialization code here
     document.getElementById("addButton").onclick = addParticipant;
+    document.getElementById("participant-table").onclick = domRemoveParticipant;
 })
