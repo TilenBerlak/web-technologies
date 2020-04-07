@@ -1,0 +1,87 @@
+header {
+	position: relative;
+	font-size: XX-Large;
+	font-weight: bold;
+	text-align: center;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	color: #000000;
+	margin: auto;
+	width: auto;
+	background-color: rgb(219, 137, 59);
+}
+
+#content1 {
+    float: left;
+    width: 200px;
+    margin: left;
+}
+
+#content2 {
+    float: left;
+    padding-left: 150px;
+    width: 825px;
+}
+
+#content3 {
+    float: left;
+    padding-left: 50px;
+    width: 400px;
+}
+
+#dicePicker {
+	margin: auto;
+    width: 90%;
+    height: 500px;
+}
+
+#dicePlatform {
+    height: 500px;
+}
+
+#diceTable {
+    height: 500px;
+}
+
+#btnRollAll {
+    width: 825px;
+    height: 60px;
+	position: relative;
+	left: 21%;
+}
+
+#btnSortIdAsc {
+    float: left
+}
+
+#btnSortIdDesc {
+    float: left
+}
+
+#btnSortValueAsc {
+    float: right
+}
+
+#btnSortValueDesc {
+    float: right
+}
+
+table {
+	border-collapse: collapse;
+	margin: auto;
+	width: 100%;
+	border: 1px solid rgb(0, 0, 0);
+}
+
+td {
+	text-align: center;
+	border: 1px solid rgb(255, 255, 255);
+    padding: 3px 7px 2px 7px;
+}
+
+th {
+	text-align: center;
+    background-color: rgb(119, 60, 32);
+    color: #F2F0E1;
+}
+

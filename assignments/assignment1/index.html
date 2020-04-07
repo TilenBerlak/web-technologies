@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <title>Dice Roller</title>
+</head>
+
+<body>
+    <header>
+		Dice Roller
+    </header>
+    
+    <div id="content1">
+        <fieldset id="dicePicker">
+            <legend>Drag dies to the platform</legend>
+            <img id="drag1" src="images/white_dice.jpg" draggable="true" ondragstart="drag(event)" alt="White dice" height="150" width="150">
+            <img id="drag2" src="images/red_dice.jpg" draggable="true" ondragstart="drag(event)" alt="Red dice" height="100" width="100">
+            <img id="drag3" src="images/blue_dice.jpg" draggable="true" ondragstart="drag(event)" alt="Blue dice" height="100" width="100">
+            <img id="drag4" src="images/green_dice.jpg" draggable="true" ondragstart="drag(event)" alt="Green dice" height="100" width="100">
+        </fieldset>
+    </div>
+
+    <div id="content2" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <fieldset id="dicePlatform">
+            <legend>Dice platform</legend>
+        </fieldset>
+    </div>
+   
+    <div id="content3">
+        <fieldset id="diceTable">
+            <legend>Dice table</legend>
+            <button id="btnSortIdAsc">&#8593;</button>
+            <button id="btnSortIdDesc">&#8595;</button>
+            <!--<button id="btnSortValueAsc">&#8593;</button>
+            <button id="btnSortValueDesc">&#8595;</button>-->
+            <table id="dice-table"> 
+                <tr>
+                    <th>id</th>
+                    <th>color</th>
+                    <th>value</th>
+                </tr>
+            </table>
+
+        </fieldset>
+    </div>
+
+    <button id="btnRollAll">Roll everything</button>
+
+    <script src="scripts/script.js"></script>
+</body>
+
+
+
+</html>
+
+
+
+
+
+
