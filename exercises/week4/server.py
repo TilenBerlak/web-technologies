@@ -52,6 +52,7 @@ def process_request(connection, address, port):
 
     # Read one line, decode it to utf-8 and strip leading and trailing spaces
     line = client.readline().decode("utf-8").strip()
+
     try:
         method, uri, version = line.split()
         assert method == "GET", "Invalid request method"

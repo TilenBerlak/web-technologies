@@ -94,7 +94,6 @@ function rollAllDice() {
 
 function sortByIdAsc() {
 
-
     if(diceArray.length > 0) {
 
         let arr = [];
