@@ -29,6 +29,12 @@ TABLE_ROW = """
 </tr>
 """
 
+# Header template for a 301 response
+RESPONSE_301 = """
+HTTP/1.1 301 Moved Permanently
+location: http://localhost:8080/index.html
+"""
+
 # Template for a 404 (Not found) error
 RESPONSE_404 = """HTTP/1.1 404 Not found\r
 content-type: text/html\r
@@ -101,7 +107,6 @@ def read_from_db(criteria=None):
     except (IOError, EOFError):
         return []
 
-
 def parse_headers(client):
     headers = dict()
     while True:
@@ -122,11 +127,10 @@ def process_request(connection, address):
     client = connection.makefile("wrb")
     line = client.readline().decode("utf-8").strip()
     
+    response = ""
     # Read and parse headers
     try:
         method, uri, version = line.split()
-        uri = "/www-data" + uri
-        print(uri)
         assert method == "GET", "Invalid request method"
         #assert len(uri) > 0 and uri[0] == "/", "Invalid request URI"
         assert version == "HTTP/1.1", "Invalid HTTP version"
@@ -138,6 +142,9 @@ def process_request(connection, address):
             body = handle.read()
 
     # create the response
+
+        if uri == "/":
+            uri = "www-data/index.html"
 
         head = HEADER_RESPONSE_200 % (
             "text/html",
