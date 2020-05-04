@@ -28,9 +28,25 @@ $urls = [
     },
     "" => function () {
         ViewHelper::redirect(BASE_URL . "book");
-    }
+    },
+    "hello/world" => function() {
+        BookController::helloWorld();
+    },
+    /*"book/detail" => function() {
+        BookController::detail();
+    }*/
 
     // TODO: Add router entries for 1) search, 2) book/edit and 3) book/delete
+    "book/search" => function() {
+        BookController::search();
+    },
+    "book/edit" => function() {
+        BookController::edit();
+    },
+    "book/delete" => function() {
+        BookController::delete();
+    }
+
 ];
 
 # The actual router.
